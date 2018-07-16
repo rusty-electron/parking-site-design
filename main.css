@@ -3,13 +3,11 @@
 body{
     background:#3498db;
     font-family: 'Poppins';
-    height: 90vh;
 }
 
 .container{
     border-radius: 8px;
     width:90%;
-    height: 100%;
     margin: 0 auto;
     background: #ecf0f1;
 }
@@ -35,14 +33,12 @@ body{
 main{
     display: grid;
     grid-template-columns: 300px 1fr;
-    height: 80%;
 }
 
 /* data-box */
 .data-box{
     padding-top:1rem; 
     background: #e74c3c;
-    width: 100%;
     color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
