@@ -19,30 +19,54 @@
             <div class="data-box">
                 <p class="m-para">Parking Status</p>
                 <p class="total-para">Total Seats:</p><span class="total-data">15</span>
-                <p class="avail-para">Available: </p><span class="avail-data">12</span>
+                <p class="avail-para">Available: </p><span class="avail-data">13</span>
                 <div class="location">
                         <p>Your Location:</p><i class="fas fa-map-marker-alt"></i><p>Guwahati, IN</p>
                 </div>
             </div>
             <div class="display-box">
-                <div id="1" class="lot-box inactive">1</div>
-                <div id="1" class="lot-box">2</div>
-                <div id="1" class="lot-box">3</div>
-                <div id="1" class="lot-box">4</div>
-                <div id="1" class="lot-box">5</div>
-                <div id="1" class="lot-box">6</div>
-                <div id="1" class="lot-box">7</div>
-                <div id="1" class="lot-box">8</div>
-                <div id="1" class="lot-box">9</div>
-                <div id="1" class="lot-box inactive">10</div>
-                <div id="1" class="lot-box inactive">11</div>
-                <div id="1" class="lot-box">12</div>
-                <div id="1" class="lot-box">13</div>
-                <div id="1" class="lot-box">14</div>
-                <div id="1" class="lot-box">15</div>
+                <div id="box-1" class="lot-box">1</div>
+                <div id="2" class="lot-box">2</div>
+                <div id="3" class="lot-box">3</div>
+                <div id="4" class="lot-box">4</div>
+                <div id="5" class="lot-box">5</div>
+                <div id="6" class="lot-box">6</div>
+                <div id="7" class="lot-box">7</div>
+                <div id="8" class="lot-box">8</div>
+                <div id="9" class="lot-box">9</div>
+                <div id="10" class="lot-box inactive">10</div>
+                <div id="11" class="lot-box inactive">11</div>
+                <div id="12" class="lot-box">12</div>
+                <div id="13" class="lot-box">13</div>
+                <div id="14" class="lot-box">14</div>
+                <div id="15" class="lot-box">15</div>
             
             </div>
         </main>
     </div>
+    <script>
+        let callAPI = function(){
+                fetch('http://electronweb.000webhostapp.com/api/all.php').then(response => {
+                return response.json();
+            }).then(data => {
+                let list = data;
+                console.log(list.response[0].data);
+                let item = document.querySelector('#box-1');
+
+                if(list.response[0].data==="1"){
+                    item.classList.add("inactive");
+                }else{
+                    item.classList.remove("inactive");
+                }
+
+                let countBox = document.querySelector(".avail-data");
+
+                countBox.textContent = 15 - document.querySelectorAll(".inactive").length;
+            });
+            setTimeout(callAPI, 2000);
+        }
+
+        callAPI();
+    </script>
 </body>
 </html>

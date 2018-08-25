@@ -8,13 +8,18 @@ body{
 .container{
     border-radius: 8px;
     width:90%;
+    height: 90vh;
     margin: 0 auto;
     background: #ecf0f1;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .main-text{
     text-align: center;
     margin: 2em auto;
+    flex-grow: 0;
 }
 
 .main-text h1{
@@ -33,6 +38,7 @@ body{
 main{
     display: grid;
     grid-template-columns: 300px 1fr;
+    flex-grow: 1;
 }
 
 /* data-box */
@@ -86,7 +92,6 @@ main{
 /* --data-box */
 
 /* display-box */
-
 .display-box{
     padding: 2em;
     background: #2c3e50;
@@ -97,6 +102,7 @@ main{
     align-items: center;
     justify-items: center;
 }
+
 
 .lot-box{
     border-radius: 6px;
